@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Tracking App</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Disease Tracking Map</h1>
+        <button class="btn btn-primary" id="addCaseBtn">Add New Case</button>
+        <div id="map"></div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="caseModal" tabindex="-1" role="dialog" aria-labelledby="caseModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="caseModalLabel">Add New Disease Case</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="caseForm">
+                            <div class="form-group">
+                                <label for="latitude">Latitude</label>
+                                <input type="text" inputmode="decimal" pattern="[0-9]*[.,]?[0-9]*" class="form-control" id="latitude" required>
+                                <button type="button" class="btn btn-secondary mt-2" id="findLocationBtn">Find My Location</button>
+                            </div>
+                            <div class="form-group">
+                                <label for="longitude">Longitude</label>
+                                <input type="text" inputmode="decimal" pattern="[0-9]*[.,]?[0-9]*" class="form-control" id="longitude" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cases">Number of Cases</label>
+                                <input type="number" class="form-control" id="cases" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
